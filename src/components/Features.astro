@@ -1,0 +1,159 @@
+---
+const features = [
+    {
+        icon: "🏋️‍♂️",
+        title: "Programme d'entraînement complet",
+        description: "Plus de 50 exercices détaillés avec photos et instructions",
+        details: [
+            "Programmes adaptés à tous les niveaux",
+            "Exercices avec et sans matériel",
+            "Vidéos explicatives incluses",
+            "Progression sur 12 semaines"
+        ]
+    },
+    {
+        icon: "🥗",
+        title: "Plan nutritionnel personnalisé",
+        description: "Guide nutritionnel complet pour optimiser vos résultats",
+        details: [
+            "Plans de repas hebdomadaires",
+            "Liste de courses détaillée",
+            "Recettes healthy et délicieuses",
+            "Conseils pour manger équilibré"
+        ]
+    },
+    {
+        icon: "📊",
+        title: "Suivi de progression",
+        description: "Outils et méthodes pour suivre vos résultats",
+        details: [
+            "Journal d'entraînement",
+            "Tableaux de suivi",
+            "Mesures et photos",
+            "Objectifs hebdomadaires"
+        ]
+    }
+];
+---
+<section class="features">
+    <div class="features-container">
+        <h2>Contenu de l'E-book</h2>
+        <div class="features-grid">
+            {features.map(feature => (
+                <div class="feature-card">
+                    <div class="feature-icon">{feature.icon}</div>
+                    <h3>{feature.title}</h3>
+                    <p class="feature-description">{feature.description}</p>
+                    <ul class="feature-details">
+                        {feature.details.map(detail => (
+                            <li>{detail}</li>
+                        ))}
+                    </ul>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
+
+<style>
+    .features {
+        background: white;
+        padding: 8rem 2rem;
+        position: relative;
+    }
+
+    .features-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 4rem;
+        color: #1a1a1a;
+        position: relative;
+    }
+
+    h2::after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+        border-radius: 2px;
+    }
+
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 3rem;
+    }
+
+    .feature-card {
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        padding: 3rem;
+        border-radius: 20px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .feature-icon {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    h3 {
+        color: #2d3436;
+        font-size: 1.8rem;
+        margin: 1rem 0;
+    }
+
+    .feature-description {
+        color: #636e72;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+
+    .feature-details {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .feature-details li {
+        color: #2d3436;
+        margin: 0.8rem 0;
+        padding-left: 1.5rem;
+        position: relative;
+    }
+
+    .feature-details li::before {
+        content: '→';
+        position: absolute;
+        left: 0;
+        color: #ff6b6b;
+    }
+
+    @media (max-width: 768px) {
+        .features {
+            padding: 4rem 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        .feature-card {
+            padding: 2rem;
+        }
+    }
+</style>

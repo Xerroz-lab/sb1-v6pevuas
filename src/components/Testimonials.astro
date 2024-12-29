@@ -1,0 +1,152 @@
+---
+const testimonials = [
+    {
+        text: "Grâce à FitLife, j'ai perdu 15kg en 3 mois tout en gardant ma motivation. Le programme est facile à suivre et les résultats sont là !",
+        author: "Marie L.",
+        image: "/testimonial-1.jpg",
+        transformation: "-15kg"
+    },
+    {
+        text: "Un guide complet qui m'a permis de comprendre les bases de la nutrition et du fitness. Les exercices sont bien expliqués et adaptables à tous les niveaux.",
+        author: "Thomas B.",
+        image: "/testimonial-2.jpg",
+        transformation: "+10kg muscle"
+    },
+    {
+        text: "Le meilleur investissement pour ma santé ! Les recettes sont délicieuses et le programme d'entraînement est vraiment efficace.",
+        author: "Sophie M.",
+        image: "/testimonial-3.jpg",
+        transformation: "-8% graisse"
+    }
+];
+---
+<section class="testimonials">
+    <div class="testimonials-container">
+        <h2>Ils ont transformé leur vie</h2>
+        <div class="testimonials-grid">
+            {testimonials.map(testimonial => (
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-image">
+                            <img src={testimonial.image} alt={testimonial.author} />
+                        </div>
+                        <div class="testimonial-info">
+                            <h3>{testimonial.author}</h3>
+                            <span class="transformation">{testimonial.transformation}</span>
+                        </div>
+                    </div>
+                    <blockquote>
+                        <p>"{testimonial.text}"</p>
+                    </blockquote>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
+
+<style>
+    .testimonials {
+        background: white;
+        padding: 8rem 2rem;
+    }
+
+    .testimonials-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 4rem;
+        color: #1a1a1a;
+        position: relative;
+    }
+
+    h2::after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+        border-radius: 2px;
+    }
+
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2.5rem;
+    }
+
+    .testimonial-card {
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        padding: 2rem;
+        border-radius: 20px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    }
+
+    .testimonial-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .testimonial-image {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 3px solid #ff6b6b;
+    }
+
+    .testimonial-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .testimonial-info h3 {
+        margin: 0;
+        color: #2d3436;
+        font-size: 1.2rem;
+    }
+
+    .transformation {
+        display: inline-block;
+        background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+        color: white;
+        padding: 0.3rem 1rem;
+        border-radius: 15px;
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+    }
+
+    blockquote {
+        margin: 0;
+        color: #636e72;
+        font-style: italic;
+        line-height: 1.6;
+    }
+
+    blockquote p {
+        margin: 0;
+    }
+
+    @media (max-width: 768px) {
+        .testimonials {
+            padding: 4rem 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        .testimonial-card {
+            padding: 1.5rem;
+        }
+    }
+</style>

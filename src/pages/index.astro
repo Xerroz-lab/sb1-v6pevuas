@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Features from '../components/Features.astro';
+import Benefits from '../components/Benefits.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Pricing from '../components/Pricing.astro';
+---
+
+<Layout title="FitLife - Votre guide ultime pour une vie saine">
+    <main>
+        <Hero />
+        <Features />
+        <Benefits />
+        <Testimonials />
+        <Pricing />
+    </main>
+</Layout>
+
+<style>
+    main {
+        margin: 0;
+        padding: 0;
+        color: #333;
+        font-family: 'Inter', system-ui, sans-serif;
+    }
+</style>

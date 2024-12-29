@@ -1,0 +1,115 @@
+---
+const benefits = [
+    {
+        icon: "🎯",
+        title: "Résultats Garantis",
+        description: "Programme testé et approuvé par des experts en fitness"
+    },
+    {
+        icon: "📱",
+        title: "Accès Immédiat",
+        description: "Téléchargement instantané sur tous vos appareils"
+    },
+    {
+        icon: "🔄",
+        title: "Mises à jour gratuites",
+        description: "Accès à vie à toutes les futures mises à jour"
+    },
+    {
+        icon: "💬",
+        title: "Support Premium",
+        description: "Assistance par email pour répondre à vos questions"
+    }
+];
+---
+<section class="benefits">
+    <div class="benefits-container">
+        <h2>Pourquoi choisir notre E-book ?</h2>
+        <div class="benefits-grid">
+            {benefits.map(benefit => (
+                <div class="benefit-card">
+                    <div class="benefit-icon">{benefit.icon}</div>
+                    <h3>{benefit.title}</h3>
+                    <p>{benefit.description}</p>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
+
+<style>
+    .benefits {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        padding: 6rem 2rem;
+    }
+
+    .benefits-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 4rem;
+        color: #1a1a1a;
+        position: relative;
+    }
+
+    h2::after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+        border-radius: 2px;
+    }
+
+    .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2.5rem;
+    }
+
+    .benefit-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+        text-align: center;
+    }
+
+    .benefit-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .benefit-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    h3 {
+        color: #2d3436;
+        margin: 1rem 0;
+        font-size: 1.5rem;
+    }
+
+    p {
+        color: #636e72;
+        line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+        .benefits {
+            padding: 4rem 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
+    }
+</style>

@@ -1,0 +1,217 @@
+---
+const bonuses = [
+    "Guide des étirements (valeur 15€)",
+    "Calendrier d'entraînement (valeur 10€)",
+    "Suivi des progrès (valeur 10€)",
+    "Accès au groupe privé (valeur 20€)"
+];
+
+const totalValue = 95; // Valeur totale incluant l'e-book et les bonus
+---
+<section class="pricing" id="pricing">
+    <div class="pricing-container">
+        <h2>Obtenez votre E-book maintenant</h2>
+        <div class="price-card">
+            <div class="price-badge">Offre Limitée</div>
+            <div class="price-header">
+                <h3>Pack Complet FitLife</h3>
+                <div class="price-comparison">
+                    <span class="original-price">{totalValue}€</span>
+                    <span class="current-price">40€</span>
+                </div>
+                <p class="price-subtitle">Paiement unique - Accès à vie</p>
+            </div>
+            <div class="main-features">
+                <h4>L'E-book inclut :</h4>
+                <ul>
+                    <li>✓ Guide complet PDF (150+ pages)</li>
+                    <li>✓ Programme d'exercices détaillé</li>
+                    <li>✓ Plans de repas personnalisables</li>
+                    <li>✓ Vidéos explicatives HD</li>
+                </ul>
+            </div>
+            <div class="bonuses">
+                <h4>Bonus Gratuits :</h4>
+                <ul>
+                    {bonuses.map(bonus => (
+                        <li>✓ {bonus}</li>
+                    ))}
+                </ul>
+            </div>
+            <div class="guarantee">
+                <span class="guarantee-icon">🔒</span>
+                <p>Garantie satisfait ou remboursé pendant 30 jours</p>
+            </div>
+            <a href="#" class="buy-button" id="checkout-button">
+                Obtenir mon accès maintenant
+                <span class="button-subtitle">Téléchargement instantané</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+    .pricing {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        padding: 8rem 2rem;
+    }
+
+    .pricing-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        margin-bottom: 4rem;
+        color: #1a1a1a;
+        position: relative;
+    }
+
+    h2::after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+        border-radius: 2px;
+    }
+
+    .price-card {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 3rem;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        position: relative;
+    }
+
+    .price-badge {
+        position: absolute;
+        top: -15px;
+        right: -15px;
+        background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+        color: white;
+        padding: 0.5rem 1.5rem;
+        border-radius: 25px;
+        font-weight: bold;
+        box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+    }
+
+    .price-header {
+        margin-bottom: 2rem;
+    }
+
+    h3 {
+        font-size: 2rem;
+        color: #2d3436;
+        margin-bottom: 1rem;
+    }
+
+    .price-comparison {
+        margin: 1.5rem 0;
+    }
+
+    .original-price {
+        font-size: 1.5rem;
+        color: #636e72;
+        text-decoration: line-through;
+        margin-right: 1rem;
+    }
+
+    .current-price {
+        font-size: 3.5rem;
+        font-weight: 800;
+        color: #ff6b6b;
+    }
+
+    .price-subtitle {
+        color: #636e72;
+        font-size: 1.1rem;
+    }
+
+    .main-features, .bonuses {
+        text-align: left;
+        margin: 2rem 0;
+    }
+
+    h4 {
+        color: #2d3436;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    li {
+        margin: 1rem 0;
+        color: #2d3436;
+        font-size: 1.1rem;
+    }
+
+    .guarantee {
+        margin: 2rem 0;
+        padding: 1rem;
+        background: #f8f9fa;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .guarantee-icon {
+        font-size: 1.5rem;
+    }
+
+    .buy-button {
+        display: block;
+        background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+        color: white;
+        padding: 1.5rem 3rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.3rem;
+        transition: transform 0.3s, box-shadow 0.3s;
+        box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+    }
+
+    .button-subtitle {
+        display: block;
+        font-size: 0.9rem;
+        font-weight: normal;
+        margin-top: 0.5rem;
+    }
+
+    .buy-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+    }
+
+    @media (max-width: 768px) {
+        .pricing {
+            padding: 4rem 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        .price-card {
+            padding: 2rem;
+        }
+
+        .current-price {
+            font-size: 3rem;
+        }
+    }
+</style>
